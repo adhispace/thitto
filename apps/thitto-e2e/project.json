@@ -1,0 +1,28 @@
+{
+  "root": "apps/thitto-e2e",
+  "sourceRoot": "apps/thitto-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/thitto-e2e/cypress.json",
+        "devServerTarget": "thitto:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "thitto:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/thitto-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["thitto"]
+}

@@ -1,0 +1,91 @@
+{
+  "projectType": "application",
+  "root": "apps/thitto",
+  "sourceRoot": "apps/thitto/src",
+  "prefix": "thitto",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/thitto",
+        "index": "apps/thitto/src/index.html",
+        "main": "apps/thitto/src/main.ts",
+        "polyfills": "apps/thitto/src/polyfills.ts",
+        "tsConfig": "apps/thitto/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/thitto/src/favicon.ico", "apps/thitto/src/assets"],
+        "styles": ["apps/thitto/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/thitto/src/environments/environment.ts",
+              "with": "apps/thitto/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "thitto:build:production"
+        },
+        "development": {
+          "browserTarget": "thitto:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "thitto:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/thitto/src/**/*.ts",
+          "apps/thitto/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/thitto"],
+      "options": {
+        "jestConfig": "apps/thitto/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

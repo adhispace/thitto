@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "thitto": "apps/thitto",
+    "thitto-e2e": "apps/thitto-e2e"
+  }
+}
