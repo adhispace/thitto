@@ -1,7 +1,11 @@
 {
   "version": 2,
   "projects": {
+    "project": "libs/project",
+    "task-card": "libs/task-card",
+    "task-list": "libs/task-list",
     "thitto": "apps/thitto",
-    "thitto-e2e": "apps/thitto-e2e"
+    "thitto-e2e": "apps/thitto-e2e",
+    "thitto-interfaces": "libs/thitto-interfaces"
   }
 }

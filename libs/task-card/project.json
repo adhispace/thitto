@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/task-card",
+  "sourceRoot": "libs/task-card/src",
+  "prefix": "thitto",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/task-card"],
+      "options": {
+        "jestConfig": "libs/task-card/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/task-card/src/**/*.ts",
+          "libs/task-card/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

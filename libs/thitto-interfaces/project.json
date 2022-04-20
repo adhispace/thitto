@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/thitto-interfaces",
+  "sourceRoot": "libs/thitto-interfaces/src",
+  "prefix": "thitto",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/thitto-interfaces"],
+      "options": {
+        "jestConfig": "libs/thitto-interfaces/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/thitto-interfaces/src/**/*.ts",
+          "libs/thitto-interfaces/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

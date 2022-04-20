@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@thitto/project": ["libs/project/src/index.ts"],
+      "@thitto/task-card": ["libs/task-card/src/index.ts"],
+      "@thitto/task-list": ["libs/task-list/src/index.ts"],
+      "@thitto/thitto-interfaces": ["libs/thitto-interfaces/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

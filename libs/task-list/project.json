@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/task-list",
+  "sourceRoot": "libs/task-list/src",
+  "prefix": "thitto",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/task-list"],
+      "options": {
+        "jestConfig": "libs/task-list/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/task-list/src/**/*.ts",
+          "libs/task-list/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
